@@ -13,6 +13,18 @@ h1 {
     padding-bottom: 1em;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+button {
+    margin: 1em;
+    height: 50px;
+    font-family: 'Lato',sans-serif;
+}
+
 .app-bar {
     width: 100%;
     background-color: #f4e04d;
@@ -24,4 +36,17 @@ h1 {
     justify-content: center;
     padding: 1em;
     background-color: #faf4f4;
+    /* Hide by Default. Only enabled if Service worker is enabled */
+    display: none;
+}
+
+#btn-notify {
+    background-color: #844685;
+    color: #ffffff;
+    padding: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 10px;
+    /* Hide by Default. Only enabled if ServiceWorker is availaible */
+    display: none;
 }

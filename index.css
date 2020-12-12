@@ -50,3 +50,7 @@ button {
     /* Hide by Default. Only enabled if ServiceWorker is availaible */
     display: none;
 }
+
+#btn-push{
+    background-color: #d4d113;
+}

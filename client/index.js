@@ -3,7 +3,7 @@ const client = (() =>
     let serviceWorkerRegObj = undefined;
     
     const  notificationButton = document.getElementById("btn-notify");
-
+    const  pushButton = document.getElementById("btn-push");
     const showNotificationButton = () => {
         notificationButton.style.display = "block";
         notificationButton.addEventListener("click",showNotification);   
@@ -67,4 +67,25 @@ const client = (() =>
         .then(registerServiceWorker)
         .then(requestNotificationPermissions)
         .catch(err => console.error(err))
-})()
+    
+    const setupPush = () => {
+        let isUserSubscribed = false;
+        const subscribeUser = () => console.log("subscribing user")
+        const unSubscribeUser = () => console.log("un-subscribing user")
+
+        pushButton.addEventListener(
+            'click',() =>{
+                if(isUserSubscribed){
+                   unSubscribeUser();
+                   isUserSubscribed = false;
+                }else {
+                    subscribeUser();
+                    isUserSubscribed = true;
+                }
+            }
+        )
+
+     }
+
+     setupPush()
+    })()

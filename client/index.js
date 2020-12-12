@@ -17,7 +17,15 @@ const client = (() =>
         const customizedTextNotification = reg =>{
              const options = {
                  body : "This is an important body!",
-                 icon : "imgs/bell-icon.png"
+                 icon : "imgs/bell-icon.png",
+                 actions : [
+                    {action : "search", title : "Try Searching!"},
+                    {action : "close", title : "Forget it!"},
+                 ],
+                 data : {
+                     notificationTime : Date.now(),
+                     githubUser : "Dhruvsahu98"
+                 }
              }
              reg.showNotification("Second Notification",options)
         }
